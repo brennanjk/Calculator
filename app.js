@@ -31,3 +31,5 @@ function operate (num1, oper, num2) {
     }
 }
 
+let display = document.querySelector('.display-container');
+display.textContent = '0';
