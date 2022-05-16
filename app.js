@@ -15,17 +15,19 @@ function divide(a,b) {
     return a / b;
 }
 
+//function to accept input and run one of the operator functions above
 function operate (num1, oper, num2) {
     if (oper === '+') {
-        add(num1, num2);
+        return add(num1, num2);
     }
     if (oper === '-') {
-        subtract(num1, num2);
+        return subtract(num1, num2);
     }
     if (oper === '*') {
-        multiply(num1, num2);
+        return multiply(num1, num2);
     }
     if (oper === '/') {
-        divide(num1, num2);
+        return divide(num1, num2);
     }
 }
+
