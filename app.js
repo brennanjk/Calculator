@@ -44,9 +44,17 @@ function buttonClick() {
                 }
             }
             if (button.classList.contains('operators')) {
-                if (operand1 === null || operand1 == '0') {    
+                if (operand1 === null) {    
                     operand1 = display.textContent;
                     operator = button.value;
+                }
+                else {
+                    operand2 = display.textContent;
+                    display.textContent = operate(operand1,operator,operand2)
+                    operand1 = display.textContent;
+                    operand2 = null;
+                    operator = button.value;
+                    oper2Switch = false;
                 }
             }
             if (button.classList.contains('equals')) {
@@ -56,6 +64,10 @@ function buttonClick() {
                 else {
                     operand2 = display.textContent;
                     display.textContent = operate(operand1, operator, operand2);
+                    operand1 = null;
+                    operand2 = null;
+                    operator = null;
+                    oper2Switch = false;
                 }
             }
         })
