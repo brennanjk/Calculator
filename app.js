@@ -3,6 +3,7 @@
 let operand1 = null
 let operand2 = null
 let operator = null
+let oper2Switch = false
 
 let display = document.querySelector('#display');
 display.textContent = '0';
@@ -28,7 +29,34 @@ function buttonClick() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
             if (button.classList.contains('numbers')) {
-                changeDisplay(button.value);
+                if (operand1 === null || operand1 == '0') {
+                    changeDisplay(button.value);
+                }
+                else if (operand1 != null) {
+                    if (oper2Switch == false) {
+                        display.textContent = 0;
+                        changeDisplay(button.value);
+                        oper2Switch = true;
+                    }
+                    else {
+                        changeDisplay(button.value);
+                    }
+                }
+            }
+            if (button.classList.contains('operators')) {
+                if (operand1 === null || operand1 == '0') {    
+                    operand1 = display.textContent;
+                    operator = button.value;
+                }
+            }
+            if (button.classList.contains('equals')) {
+                if (operator === null) {
+                    
+                }
+                else {
+                    operand2 = display.textContent;
+                    display.textContent = operate(operand1, operator, operand2);
+                }
             }
         })
     })
@@ -53,7 +81,7 @@ function divide(a,b) {
 }
 
 //function to accept input and run one of the operator functions above
-function operate (operand1, operator, operand2) {
+function operate (num1, oper, num2) {
     if (oper === '+') {
         return add(num1, num2);
     }
