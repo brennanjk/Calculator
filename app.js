@@ -70,6 +70,9 @@ function buttonClick() {
                     oper2Switch = false;
                 }
             }
+            if (button.classList.contains('ac')) {
+                acReset();
+            }
         })
     })
 }
@@ -106,4 +109,12 @@ function operate (num1, oper, num2) {
     if (oper === '/') {
         return divide(num1, num2);
     }
+}
+
+function acReset() {
+    display.textContent = 0;
+    operand1 = null
+    operand2 = null
+    operator = null
+    oper2Switch = false
 }
