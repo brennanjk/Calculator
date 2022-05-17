@@ -65,19 +65,19 @@ function buttonClick() {
 buttonClick();
 
 function add(a,b) {
-    return a + b;
+    return Number(a) + Number(b);
 }
 
 function subtract(a,b) {
-    return a - b;
+    return Number(a) - Number(b);
 }
 
 function multiply(a,b) {
-    return a * b;
+    return Number(a) * Number(b);
 }
 
 function divide(a,b) {
-    return a / b;
+    return Number(a) / Number(b);
 }
 
 //function to accept input and run one of the operator functions above
