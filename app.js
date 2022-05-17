@@ -1,4 +1,8 @@
+//create place holders for our functions to reference and use
 
+let operand1 = null
+let operand2 = null
+let operator = null
 
 let display = document.querySelector('#display');
 display.textContent = '0';
@@ -14,6 +18,7 @@ function changeDisplay(input) {
     }
 }
 
+//Might need a window event listener - saving here for later reference
 // window.addEventListener('keydown',function(e) {
 //     const key = document.querySelector(`button[data-key='${e.code}']`);
 //     key.click();
@@ -48,7 +53,7 @@ function divide(a,b) {
 }
 
 //function to accept input and run one of the operator functions above
-function operate (num1, oper, num2) {
+function operate (operand1, operator, operand2) {
     if (oper === '+') {
         return add(num1, num2);
     }
