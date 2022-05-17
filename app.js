@@ -33,3 +33,16 @@ function operate (num1, oper, num2) {
 
 let display = document.querySelector('#display');
 display.textContent = '0';
+
+let buttons = document.querySelectorAll('button')
+
+function zero_check() {
+    while (display.textContent[0] === '0' && display.textContent.length > 1) {
+        display.textContent = display.textContent.substring(1);
+    }
+}
+
+function change_display(input) {
+    display.textContent += input;
+    zero_check();
+}
