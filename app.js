@@ -36,13 +36,11 @@ display.textContent = '0';
 
 let buttons = document.querySelectorAll('button')
 
-function zero_check() {
-    while (display.textContent[0] === '0' && display.textContent.length > 1) {
-        display.textContent = display.textContent.substring(1);
-    }
-}
-
 function change_display(input) {
-    display.textContent += input;
-    zero_check();
+    if (display.textContent === '0' || display.textContent === 0) {
+        display.textContent = input;
+    }
+    else {
+        display.textContent += input;
+    }
 }
