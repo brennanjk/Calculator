@@ -80,6 +80,7 @@ function buttonClick() {
                 }
             }
             if (button.classList.contains('decimal')) {
+                // make decimal behave properly when used immediately after an operator symbol is pressed
                 if (changeOperatorOnly) {
                     display.textContent = '0.';
                     changeOperatorOnly = false;
