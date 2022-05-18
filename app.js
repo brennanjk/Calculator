@@ -3,7 +3,10 @@
 let operand1 = null
 let operand2 = null
 let operator = null
+//we need the display to reset after operand1 is declared and we click a number, but we only want it to reset once until operand2 is declared. Switch below is used for that purpose
 let oper2Switch = false
+//we need to allow operator buttons to call the operator functions when entering consecutive equations (ex. 5 + 5 - 6 * 4, etc.) BUT not if they'e pressed over and over (5 + 5 + + +)
+let changeOperatorOnly = false
 
 let display = document.querySelector('#display');
 display.textContent = '0';
@@ -29,6 +32,7 @@ function buttonClick() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
             if (button.classList.contains('numbers')) {
+                changeOperatorOnly = false;
                 if (operand1 === null || operand1 == '0') {
                     changeDisplay(button.value);
                 }
@@ -47,6 +51,10 @@ function buttonClick() {
                 if (operand1 === null) {    
                     operand1 = display.textContent;
                     operator = button.value;
+                    changeOperatorOnly = true;
+                }
+                else if (changeOperatorOnly === true) {
+                    operator = button.value;
                 }
                 else {
                     operand2 = display.textContent;
@@ -55,6 +63,7 @@ function buttonClick() {
                     operand2 = null;
                     operator = button.value;
                     oper2Switch = false;
+                    changeOperatorOnly = true;
                 }
             }
             if (button.classList.contains('equals')) {
