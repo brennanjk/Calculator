@@ -19,9 +19,15 @@ function changeDisplay(input) {
     }
     else {
         display.textContent += input;
+        displayLengthCheck()
     }
 }
-
+//function to shorten long numbers
+function displayLengthCheck() {
+    if (display.textContent.length > 9) {
+        display.textContent = display.textContent.substring(0,9);
+    }
+}
 //Might need a window event listener - saving here for later reference
 // window.addEventListener('keydown',function(e) {
 //     const key = document.querySelector(`button[data-key='${e.code}']`);
@@ -59,6 +65,7 @@ function buttonClick() {
                 else {
                     operand2 = display.textContent;
                     display.textContent = operate(operand1,operator,operand2)
+                    displayLengthCheck();
                     operand1 = display.textContent;
                     operand2 = null;
                     operator = button.value;
@@ -73,6 +80,7 @@ function buttonClick() {
                 else {
                     operand2 = display.textContent;
                     display.textContent = operate(operand1, operator, operand2);
+                    displayLengthCheck();
                     operand1 = null;
                     operand2 = null;
                     operator = null;
