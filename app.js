@@ -84,6 +84,9 @@ function buttonClick() {
                     display.textContent += button.value;
                 }
             }
+            if (button.classList.contains('sign')) {
+                positiveNegative();
+            }
             if (button.classList.contains('ac')) {
                 acReset();
             }
@@ -135,4 +138,13 @@ function acReset() {
 
 function decimalCheck() {
     return display.textContent.includes('.')
+}
+
+function positiveNegative () {
+    if (display.textContent.startsWith('-')) {
+        display.textContent = display.textContent.substring(1);
+    }
+    else if (display.textContent != '0') {
+        display.textContent = '-' + display.textContent;
+    }
 }
