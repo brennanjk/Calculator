@@ -79,6 +79,11 @@ function buttonClick() {
                     oper2Switch = false;
                 }
             }
+            if (button.classList.contains('decimal')) {
+                if (!decimalCheck()) {
+                    display.textContent += button.value;
+                }
+            }
             if (button.classList.contains('ac')) {
                 acReset();
             }
@@ -126,4 +131,8 @@ function acReset() {
     operand2 = null
     operator = null
     oper2Switch = false
+}
+
+function decimalCheck() {
+    return display.textContent.includes('.')
 }
