@@ -80,7 +80,12 @@ function buttonClick() {
                 }
             }
             if (button.classList.contains('decimal')) {
-                if (!decimalCheck()) {
+                if (changeOperatorOnly) {
+                    display.textContent = '0.';
+                    changeOperatorOnly = false;
+                    oper2Switch = true;
+                }
+                else if (!decimalCheck()) {
                     display.textContent += button.value;
                 }
             }
