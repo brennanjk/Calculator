@@ -101,6 +101,19 @@ function buttonClick() {
             if (button.classList.contains('sign')) {
                 positiveNegative();
             }
+            if (button.classList.contains('back-space')) {
+                if (!changeOperatorOnly) {
+                    if (display.textContent.length == 1) {
+                        display.textContent = 0;
+                    }
+                    else {
+                        display.textContent = display.textContent.slice(0,-1);
+                        if (display.textContent == '-') {
+                            display.textContent = 0;
+                        }
+                    }
+                }
+            }
             if (button.classList.contains('ac')) {
                 acReset();
             }
