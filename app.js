@@ -96,10 +96,12 @@ function buttonClick() {
                 }
                 else if (!decimalCheck()) {
                     display.textContent += button.value;
+                    displayLengthCheck() 
                 }
             }
             if (button.classList.contains('sign')) {
                 positiveNegative();
+                displayLengthCheck() 
             }
             if (button.classList.contains('back-space')) {
                 if (!changeOperatorOnly) {
