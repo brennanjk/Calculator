@@ -32,6 +32,7 @@
 .button-container {
     grid-template-columns: repeat(4, 100px);
     grid-auto-rows: 100px;
+    border: 3px solid black;
 }
 
 button {
@@ -51,4 +52,8 @@ button {
 .operators,
 .equals {
     background-color: rgb(121, 75, 54);
+}
+
+.ac {
+    grid-column: span 2;
 }
