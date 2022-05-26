@@ -12,7 +12,7 @@
 }
 
 .calc-container {
-    border: 20px solid rgb(94, 50, 25);
+    border: 20px solid rgb(30, 117, 133);
     border-radius: 20px;
 }
 
@@ -48,14 +48,14 @@ button:hover {
 .numbers,
 .decimal,
 .sign {
-    background-color: rgb(109, 109, 109);
+    background-color: rgb(207, 211, 228);
 }
 
 .ac,
 .back-space,
 .operators,
 .equals {
-    background-color: rgb(121, 75, 54);
+    background-color: rgb(69, 192, 214);
 }
 
 .ac {
